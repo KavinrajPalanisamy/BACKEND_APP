@@ -1,0 +1,15 @@
+{
+  "name": "db_models",
+  "version": "1.0.0",
+  "description": "connect to db models",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "kavinraj_palanisamy",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.8.0",
+    "sequelize": "^6.26.0"
+  }
+}

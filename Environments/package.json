@@ -1,0 +1,14 @@
+{
+  "name": "my_env",
+  "version": "1.0.0",
+  "description": "to connect custom environments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
