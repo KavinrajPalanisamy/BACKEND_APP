@@ -1,8 +1,8 @@
 var envConfig = {
-    HOST: '192.168.0.5',
+    HOST: 'localhost',
     USER: 'postgres',
-    PASSWORD: "12345",
-    DB: 'nightowl',
+    PASSWORD: "1234",
+    DB: 'postgres',
     SECRET_KEY: 'ffxr94jpvd',
     PORT: '1200'
 }
