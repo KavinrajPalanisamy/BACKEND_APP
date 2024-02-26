@@ -25,4 +25,5 @@ app.use('/get', testRouter);
 
 const port = process.env.PORT || 1200;
 server.listen(port);
-console.log('Server Listening to the http://localhost:' + port);
+
+console.log('Server Listening to the Port ' + port);
