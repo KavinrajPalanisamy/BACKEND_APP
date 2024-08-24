@@ -16,7 +16,7 @@
                 "NODE_ENV_CONF": "LOCAL",
                 "PORT": "1200"
             },
-            "program": "${workspaceFolder}\\BackendApp\\app.js",
+            "program": "${workspaceFolder}/BackendApp/app.js",
             "console": "integratedTerminal"
         }
     ]
