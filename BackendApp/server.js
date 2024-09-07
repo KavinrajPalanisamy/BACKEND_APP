@@ -14,6 +14,7 @@ app.use(cors());
 // IMPORT MODELS
 const dashboardRouter = require('./routers/dashboardRouter');
 const testRouter = require('./routers/testrouter');
+const authRouter = require('./routers/authRouter');
 
 
 
@@ -21,6 +22,7 @@ const testRouter = require('./routers/testrouter');
 // ASSIGNING PATH
 app.use('/user', dashboardRouter);
 app.use('/get', testRouter);
+app.use('/auth', authRouter);
 
 
 

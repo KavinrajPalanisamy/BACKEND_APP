@@ -10,6 +10,7 @@
     "moment": "^2.29.4",
     "my_environments": "file:../Environments",
     "pg": "^8.8.0",
-    "sequelize": "^6.26.0"
+    "sequelize": "^6.26.0",
+    "uuid": "^10.0.0"
   }
 }
