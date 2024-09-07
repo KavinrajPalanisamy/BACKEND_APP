@@ -46,5 +46,5 @@ CREATE TABLE session_logs (
 	session_active bpchar(1) NOT NULL DEFAULT 'Y'::bpchar,
 	device varchar NULL,
 	platform varchar NULL,
-	CONSTRAINT session_logs_unique UNIQUE (user_id,email,session_active,session_ref_no)
+	CONSTRAINT session_logs_unique UNIQUE (user_id,email,session_active,session_id)
 );
