@@ -226,6 +226,228 @@ flowerbed[i] is 0 or 1.
 There are no two adjacent flowers in flowerbed.
 0 <= n <= flowerbed.length
 
+-----------------------------------------------------------------------------
+
+35. Search Insert Position
+Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+You must write an algorithm with O(log n) runtime complexity.
+
+Example 1:
+Input: nums = [1,3,5,6], target = 5
+Output: 2
+
+Example 2:
+Input: nums = [1,3,5,6], target = 2
+Output: 1
+
+Example 3:
+Input: nums = [1,3,5,6], target = 7
+Output: 4
+
+Constraints:
+1 <= nums.length <= 104
+-104 <= nums[i] <= 104
+nums contains distinct values sorted in ascending order.
+-104 <= target <= 104
+
+-----------------------------------------------------------------------------
+
+121. Best Time to Buy and Sell Stock
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
+Example 1:
+Input: prices = [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+
+Example 2:
+Input: prices = [7,6,4,3,1]
+Output: 0
+Explanation: In this case, no transactions are done and the max profit = 0.
+
+Constraints:
+1 <= prices.length <= 105
+0 <= prices[i] <= 104
+
+-----------------------------------------------------------------------------
+
+136. Single Number
+Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+Example 1:
+Input: nums = [2,2,1]
+Output: 1
+
+Example 2:
+Input: nums = [4,1,2,1,2]
+Output: 4
+
+Example 3:
+Input: nums = [1]
+Output: 1
+ 
+Constraints:
+1 <= nums.length <= 3 * 104
+-3 * 104 <= nums[i] <= 3 * 104
+
+-----------------------------------------------------------------------------
+
+217. Contains Duplicate
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+Example 1:
+Input: nums = [1,2,3,1]
+Output: true
+Explanation:
+The element 1 occurs at the indices 0 and 3.
+
+Example 2:
+Input: nums = [1,2,3,4]
+Output: false
+Explanation:
+All elements are distinct.
+
+Example 3:
+Input: nums = [1,1,1,3,3,4,3,2,4,2]
+Output: true
+ 
+Constraints:
+1 <= nums.length <= 105
+-109 <= nums[i] <= 109
+
+-----------------------------------------------------------------------------
+
+219. Contains Duplicate II
+Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.
+
+Example 1:
+Input: nums = [1,2,3,1], k = 3
+Output: true
+
+Example 2:
+Input: nums = [1,0,1,1], k = 1
+Output: true
+
+Example 3:
+Input: nums = [1,2,3,1,2,3], k = 2
+Output: false
+
+Constraints:
+1 <= nums.length <= 105
+-109 <= nums[i] <= 109
+0 <= k <= 105
+
+-----------------------------------------------------------------------------
+
+628. Maximum Product of Three Numbers
+Given an integer array nums, find three numbers whose product is maximum and return the maximum product.
+
+Example 1:
+Input: nums = [1,2,3]
+Output: 6
+
+Example 2:
+Input: nums = [1,2,3,4]
+Output: 24
+
+Example 3:
+Input: nums = [-1,-2,-3]
+Output: -6
+
+Constraints:
+3 <= nums.length <= 104
+-1000 <= nums[i] <= 1000
+
+-----------------------------------------------------------------------------
+
+643. Maximum Average Subarray I
+You are given an integer array nums consisting of n elements, and an integer k.
+Find a contiguous subarray whose length is equal to k that has the maximum average value and return this value. Any answer with a calculation error less than 10-5 will be accepted.
+
+Example 1:
+Input: nums = [1,12,-5,-6,50,3], k = 4
+Output: 12.75000
+Explanation: Maximum average is (12 - 5 - 6 + 50) / 4 = 51 / 4 = 12.75
+
+Example 2:
+Input: nums = [5], k = 1
+Output: 5.00000
+
+Constraints:
+n == nums.length
+1 <= k <= n <= 105
+-104 <= nums[i] <= 104
+
+-----------------------------------------------------------------------------
+
+645. Set Mismatch
+You have a set of integers s, which originally contains all the numbers from 1 to n. Unfortunately, due to some error, one of the numbers in s got duplicated to another number in the set, which results in repetition of one number and loss of another number.
+You are given an integer array nums representing the data status of this set after the error.
+Find the number that occurs twice and the number that is missing and return them in the form of an array.
+
+Example 1:
+
+Input: nums = [1,2,2,4]
+Output: [2,3]
+
+Example 2:
+Input: nums = [1,1]
+Output: [1,2]
+
+Constraints:
+2 <= nums.length <= 10^4
+1 <= nums[i] <= 10^4
+
+-----------------------------------------------------------------------------
+
+674. Longest Continuous Increasing Subsequence
+Given an unsorted array of integers nums, return the length of the longest continuous increasing subsequence (i.e. subarray). The subsequence must be strictly increasing.
+A continuous increasing subsequence is defined by two indices l and r (l < r) such that it is [nums[l], nums[l + 1], ..., nums[r - 1], nums[r]] and for each l <= i < r, nums[i] < nums[i + 1].
+
+Example 1:
+Input: nums = [1,3,5,4,7]
+Output: 3
+Explanation: The longest continuous increasing subsequence is [1,3,5] with length 3.
+Even though [1,3,5,7] is an increasing subsequence, it is not continuous as elements 5 and 7 are separated by element 4.
+
+Example 2:
+Input: nums = [2,2,2,2,2]
+Output: 1
+Explanation: The longest continuous increasing subsequence is [2] with length 1. Note that it must be strictly
+increasing.
+ 
+Constraints:
+1 <= nums.length <= 10^4
+-109 <= nums[i] <= 10^9
+
+-----------------------------------------------------------------------------
+
+747. Largest Number At Least Twice of Others
+You are given an integer array nums where the largest integer is unique.
+Determine whether the largest element in the array is at least twice as much as every other number in the array. If it is, return the index of the largest element, or return -1 otherwise.
+
+Example 1:
+Input: nums = [3,6,1,0]
+Output: 1
+Explanation: 6 is the largest integer.
+For every other number in the array x, 6 is at least twice as big as x.
+The index of value 6 is 1, so we return 1.
+
+Example 2:
+Input: nums = [1,2,3,4]
+Output: -1
+Explanation: 4 is less than twice the value of 3, so we return -1.
+
+Constraints:
+2 <= nums.length <= 50
+0 <= nums[i] <= 100
+The largest element in nums is unique.
+
+-----------------------------------------------------------------------------
 
 
 
