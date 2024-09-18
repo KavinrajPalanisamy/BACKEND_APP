@@ -12,5 +12,26 @@
     "pg": "^8.8.0",
     "sequelize": "^6.26.0",
     "uuid": "^10.0.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "knowledge-acquisition-nodejs",
+  "version": "1.0.0",
+  "description": "Exploring Nodejs",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KavinrajPalanisamy/BACKEND_APP.git"
+  },
+  "keywords": [
+    "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"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KavinrajPalanisamy/BACKEND_APP/issues"
+  },
+  "homepage": "https://github.com/KavinrajPalanisamy/BACKEND_APP#readme"
 }

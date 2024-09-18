@@ -1,0 +1,13 @@
+Steps to install PostgreSQL on Debian 12:
+
+1. Update packages: Run sudo apt update to update the package information.
+
+2. Install PostgreSQL: Run sudo apt install postgresql postgresql-contrib to install PostgreSQL from the default repository. You can also install it from the PostgreSQL repository by running sudo apt install postgresql -y.
+
+3. Create a cluster: Run sudo pg_createcluster 12 main --start to create a cluster and start the PostgreSQL service.
+
+4. Enter the PostgreSQL shell: Run sudo -u postgres psql to enter the PostgreSQL shell.
+
+5. Adjust settings: Run sudo nano /etc/postgresql/12/main/pg_hba.conf to change the settings to allow connections from specific IP addresses.
+
+6. Change the password: Run sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'your_new_password';" to change the password for the postgres user.
