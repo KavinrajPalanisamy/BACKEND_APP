@@ -18,6 +18,7 @@ Steps to install PostgreSQL on Debian 12:
 git clone https://<PAT>@github.com/username/repo.git
 
 FOR ERROR:
+----------
 error: gpg failed to sign the data
 fatal: failed to write commit object
 
