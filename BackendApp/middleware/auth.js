@@ -1,5 +1,9 @@
 const sequelize = require('../dbconfig/seqConfig');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+
+// const session_id = require('uuid').v4();
+// console.log(session_id);
+
 
 module.exports.authenticateReq = async (req) => {
     try {
