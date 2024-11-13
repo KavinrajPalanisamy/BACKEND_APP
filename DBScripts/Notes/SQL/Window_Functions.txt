@@ -120,3 +120,14 @@ PERCENT_RANK() calculates the relative rank of each row.
 CUME_DIST() calculates the cumulative distribution of a value within a partition.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Order of Execution:
+=================
+1. FROM
+2. JOIN (ON and USING)
+3. WHERE
+4. GROUP BY
+5. HAVING
+6. SELECT
+7. DISTINCT
+8. ORDER BY
+9. LIMIT / OFFSET
