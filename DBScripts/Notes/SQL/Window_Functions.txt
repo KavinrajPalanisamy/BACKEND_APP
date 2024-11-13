@@ -1,0 +1,122 @@
+1. ROW_NUMBER()
+=================================
+Assigns a unique number to each row within a partition.
+
+SELECT
+    employee_id,
+    department,
+    salary,
+    ROW_NUMBER() OVER (PARTITION BY department ORDER BY salary DESC) AS row_num
+FROM
+    employees;
+This example assigns a unique number to each employee within their department, ordered by salary in descending order.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. RANK()
+=================================
+Gives a rank to each row within a partition. Rows with the same values receive the same rank, leaving gaps in ranks.
+
+SELECT
+    employee_id,
+    department,
+    salary,
+    RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS rank
+FROM
+    employees;
+In this case, employees with the same salary within the same department will have the same rank, but if there's a tie, the next rank will skip numbers to reflect it.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+3. DENSE_RANK()
+=================================
+Similar to RANK(), but it does not leave gaps in the ranking sequence when there are ties.
+
+SELECT
+    employee_id,
+    department,
+    salary,
+    DENSE_RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS dense_rank
+FROM
+    employees;
+With DENSE_RANK(), tied ranks do not leave gaps; if two employees are tied at rank 2, the next rank will be 3 instead of skipping to 4.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+4. NTILE()
+=================================
+Divides rows within a partition into a specified number of buckets and assigns a bucket number to each row.
+
+SELECT
+    employee_id,
+    department,
+    salary,
+    NTILE(4) OVER (PARTITION BY department ORDER BY salary DESC) AS quartile
+FROM
+    employees;
+This example divides employees within each department into 4 buckets, based on their salary, assigning each row a bucket number.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+5. LAG() and LEAD()
+=================================
+LAG() allows you to access data from a previous row, while LEAD() lets you access data from a following row.
+
+SELECT
+    employee_id,
+    department,
+    salary,
+    LAG(salary, 1) OVER (PARTITION BY department ORDER BY salary) AS previous_salary,
+    LEAD(salary, 1) OVER (PARTITION BY department ORDER BY salary) AS next_salary
+FROM
+    employees;
+In this example, each row displays the previous and next employee salaries within the same department.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+6. SUM(), AVG(), MIN(), MAX()
+=================================
+Aggregate functions like SUM() and AVG() can be used as window functions to calculate cumulative or moving totals.
+
+SELECT
+    employee_id,
+    department,
+    salary,
+    SUM(salary) OVER (PARTITION BY department ORDER BY salary ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_salary
+FROM
+    employees;
+Here, cumulative_salary calculates the running total of salaries within each department, ordered by salary.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+7. FIRST_VALUE() and LAST_VALUE()
+=================================
+These functions return the first and last values in a partition, respectively.
+
+SELECT
+    employee_id,
+    department,
+    salary,
+    FIRST_VALUE(salary) OVER (PARTITION BY department ORDER BY salary ASC) AS lowest_salary,
+    LAST_VALUE(salary) OVER (PARTITION BY department ORDER BY salary ASC ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS highest_salary
+FROM
+    employees;
+Here, lowest_salary gets the smallest salary, and highest_salary gets the largest salary in each department.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+8. PERCENT_RANK() and CUME_DIST()
+=================================
+These functions provide relative rank as a percentage and cumulative distribution respectively.
+
+SELECT
+    employee_id,
+    department,
+    salary,
+    PERCENT_RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS percent_rank,
+    CUME_DIST() OVER (PARTITION BY department ORDER BY salary DESC) AS cumulative_dist
+FROM
+    employees;
+PERCENT_RANK() calculates the relative rank of each row.
+CUME_DIST() calculates the cumulative distribution of a value within a partition.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
